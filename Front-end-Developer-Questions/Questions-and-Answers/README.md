@@ -1409,6 +1409,14 @@
 		jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面
 
 -  页面编码和被请求的资源编码如果不一致如何处理？
+		比如：http://www.yyy.com/a.html 中嵌入了一个http://www.xxx.com/test.js
+
+		a.html 的编码是gbk或gb2312的。 而引入的js编码为utf-8的 ，那就需要在引入的时候
+
+		<script src="http://www.xxx.com/test.js" charset="utf-8"></script>
+		
+		同理，如果你的页面是utf-8的，引入的js是gbk的，那么就需要加上charset="gbk".
+
 
 -  服务器代理转发时，该如何处理cookie？
 
